@@ -18,6 +18,12 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <Preference
+            android:key="statusbar_clock_date"
+            android:title="@string/status_bar_clock_date_title"
+            android:summary="@string/status_bar_clock_date_summary"
+            android:fragment="com.lighthouse.settings.fragments.StatusbarClockSettings" />
+
     <Preference
         android:key="traffic"
         android:title="@string/network_traffic_settings_title"
