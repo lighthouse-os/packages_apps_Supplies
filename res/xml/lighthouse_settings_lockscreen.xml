@@ -54,4 +54,34 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="lockscreen_media_category"
+        android:title="@string/lockscreen_media_category">
+
+        <com.lighthouse.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_media_metadata"
+            android:title="@string/media_art_title"
+            android:summary="@string/media_art_summary"
+            android:defaultValue="true" />
+
+        <com.lighthouse.settings.preferences.SystemSettingListPreference
+            android:key="lockscreen_albumart_filter"
+            android:title="@string/lockscreen_albumart_filter_title"
+            android:entries="@array/lockscreen_albumart_filter_entries"
+            android:entryValues="@array/lockscreen_albumart_filter_values"
+            android:dependency="lockscreen_media_metadata"
+            android:defaultValue="0" />
+
+        <com.lighthouse.settings.preferences.CustomSeekBarPreference
+            android:key="lockscreen_media_blur"
+            android:title="@string/lockscreen_media_blur_title"
+            android:max="100"
+            android:min="5"
+            settings:units="%"
+            settings:interval="5"
+            android:defaultValue="100"
+            android:dependency="lockscreen_media_metadata" /> 
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

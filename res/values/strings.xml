@@ -267,6 +267,11 @@
     <string name="show_app_volume_title">Show app volume</string>
     <string name="show_app_volume_summary">Show app volume in volume panel (Only works for Stock Volume panel)</string>
 
+    <!-- Media art -->
+    <string name="lockscreen_media_category">Music</string>
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Enable media cover art on the lockscreen</string>
+
     <!-- Lockscreen album art filter -->
     <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
     <string name="lockscreen_albumart_filter_none">None</string>
