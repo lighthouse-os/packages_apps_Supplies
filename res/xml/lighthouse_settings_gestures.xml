@@ -35,4 +35,16 @@
         android:dependency="torch_long_press_power_gesture"
         android:persistent="false" />
 
+    <PreferenceCategory
+         android:key="dtts_category"
+         android:title="@string/dtts_category_title">
+
+        <com.lighthouse.settings.preferences.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/double_tap_to_sleep_title"
+            android:summary="@string/double_tap_to_sleep_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

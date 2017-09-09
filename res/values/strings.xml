@@ -212,6 +212,7 @@
     <!-- Double tap-to-sleep -->
     <string name="double_tap_to_sleep_title">Status bar</string>
     <string name="double_tap_to_sleep_summary">Double-tap status bar to put the device to sleep</string>
+    <string name="dtts_category_title">Double tap to sleep</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_slider_title">Brightness slider</string>
