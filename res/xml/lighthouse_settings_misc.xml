@@ -30,4 +30,10 @@
         android:summary="@string/show_app_volume_summary"
         android:defaultValue="false" />
 
+    <Preference
+        android:key="smart_pixels"
+        android:fragment="com.lighthouse.settings.fragments.SmartPixels"
+        android:title="@string/smart_pixels_title"
+        android:summary="@string/smart_pixels_summary" />
+
 </PreferenceScreen>
