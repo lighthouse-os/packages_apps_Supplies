@@ -42,4 +42,12 @@
         android:summary="@string/allow_signature_fake_summary"
         android:defaultValue="false" />
 
+    <Preference
+        android:key="gaming_mode"
+        android:icon="@drawable/ic_gaming"
+        android:fragment="com.lighthouse.settings.fragments.GamingMode"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
