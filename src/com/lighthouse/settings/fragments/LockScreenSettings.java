@@ -33,6 +33,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+import com.android.internal.util.lighthouse.LighthouseUtils;
 import com.android.internal.util.lighthouse.fod.FodUtils;
 import android.provider.Settings;
 import com.android.settings.R;
@@ -46,7 +47,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
-
+    private static final String FOD_ANIMATION_CATEGORY = "fod_animations";
     private PreferenceCategory mFODIconPickerCategory;
 
     @Override
@@ -59,6 +60,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
             prefScreen.removePreference(mFODIconPickerCategory);
         }
+
+        final PreferenceCategory fodCat = (PreferenceCategory) prefScreen.findPreference(FOD_ANIMATION_CATEGORY);
+        final boolean isFodAnimationResources = LighthouseUtils.isPackageInstalled(getContext(),
+                      getResources().getString(com.android.internal.R.string.config_fodAnimationPackage));
+        if (!isFodAnimationResources) {
+            prefScreen.removePreference(fodCat);
+        }
+
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
