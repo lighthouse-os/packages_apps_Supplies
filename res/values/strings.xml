@@ -383,4 +383,12 @@
     <string name="unit_milliseconds">milliseconds</string>
     <string name="unit_pixels">dp</string>
 
+     <!-- VoLTE switch -->
+    <string name="volte_switch_title">VoLTE icon</string>
+    <string name="volte_switch_summary">Display VoLTE icon</string>
+
+     <!-- Dark clock switch -->
+    <string name="dark_clock_title">Dark Android S Clock</string>
+    <string name="dark_clock_summary">Make the Android S clock dark on lockscreen</string>
+    
 </resources>
