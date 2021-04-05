@@ -42,4 +42,9 @@
         android:summary="@string/allow_signature_fake_summary"
         android:defaultValue="false" />
 
+    <Preference
+        android:key="gaming_category"
+        android:title="@string/gaming_title"
+        android:summary="@string/gaming_title_summary"
+        android:fragment="com.lighthouse.fragments.GamingModeSettings" />
 </PreferenceScreen>
