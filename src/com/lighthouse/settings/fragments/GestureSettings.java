@@ -5,6 +5,8 @@ import com.android.internal.logging.nano.MetricsProto;
 import android.os.Bundle;
 import android.provider.Settings;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import com.lighthouse.settings.preferences.Utils;
 import androidx.preference.ListPreference;
 
 import com.android.settings.R;
@@ -37,6 +39,13 @@ public class GestureSettings extends SettingsPreferenceFragment implements
                         Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
         mTorchLongPressPowerTimeout.setValue(Integer.toString(TorchTimeout));
         mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
+
+        PreferenceCategory preferenceCategory = (PreferenceCategory) findPreference("doubleap_gestures");
+        Preference mDozeTriggerPref = (Preference) findPreference("doze_trigger_doubletap");
+        // if (Utils.isCustomDoze(getActivity().getApplicationContext())) {
+        //     preferenceCategory.removePreference(mDozeTriggerPref);
+        // }
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
