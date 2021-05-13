@@ -18,18 +18,72 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.lighthouse.settings.preferences.SecureSettingListPreference
-        android:key="qs_show_brightness_slider"
-        android:title="@string/qs_show_brightness_slider_title"
-        android:summary="%s"
-        android:dialogTitle="@string/qs_show_brightness_slider_title"
-        android:entries="@array/qs_show_brightness_slider_entries"
-        android:entryValues="@array/qs_show_brightness_slider_values"
-        android:defaultValue="1" />
+        <com.lighthouse.settings.preferences.CustomSeekBarPreference
+            android:key="qs_rows_portrait"
+            android:title="@string/qs_rows_portrait_title"
+            android:max="4"
+            settings:min="1"
+            settings:units=""
+            android:defaultValue="3"
+            android:persistent="false" />
 
-    <com.lighthouse.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_show_auto_brightness"
-        android:title="@string/qs_show_auto_brightness_title"
-        android:summary="@string/qs_show_auto_brightness_summary"
+        <com.lighthouse.settings.preferences.CustomSeekBarPreference
+            android:key="qs_rows_landscape"
+            android:title="@string/qs_rows_landscape_title"
+            android:max="2"
+            settings:min="1"
+            settings:units=""
+            android:defaultValue="2"
+            android:persistent="false" />
+
+            <PreferenceCategory 
+        android:key="qs_layout_category" 
+        android:title="@string/qs_layout_category"> 
+
+        <com.lighthouse.settings.preferences.CustomSeekBarPreference
+            android:key="qs_columns_portrait"
+            android:title="@string/qs_columns_portrait_title"
+            android:max="8"
+            settings:min="3"
+            settings:units=""
+            android:defaultValue="4"
+            android:persistent="false" />
+
+        <com.lighthouse.settings.preferences.CustomSeekBarPreference
+            android:key="qs_columns_landscape"
+            android:title="@string/qs_columns_landscape_title"
+            android:max="8"
+            settings:min="3"
+            settings:units=""
+            android:defaultValue="4"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+
+      <PreferenceCategory
+        android:title="@string/qs_tiles_title">
+
+        <com.lighthouse.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_tile_title_visibility"
+        android:title="@string/qs_tile_title_visibility_title"
+        android:summary="@string/qs_tile_title_visibility_summary"
         android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <com.lighthouse.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_panel_bg_use_new_tint"
+        android:title="@string/qs_bg_use_new_tint"
+        android:summary="@string/qs_bg_use_new_tint_summary"
+        android:defaultValue="true" />
+
+    <!-- QS Header data uasge -->
+    <com.lighthouse.settings.preferences.SecureSettingListPreference
+        android:key="qs_datausage"
+        android:title="@string/qs_datausage_title"
+        android:entries="@array/qs_datausage_entries"
+        android:entryValues="@array/qs_datausage_values"
+        android:defaultValue="0" />
+
 </PreferenceScreen>

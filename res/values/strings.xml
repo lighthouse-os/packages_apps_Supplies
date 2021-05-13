@@ -237,4 +237,30 @@
     <!-- Power menu reboot fastbootd -->
     <string name="powermenu_reboot_fastboot_title">Fastbootd mode</string>
     <string name="powermenu_reboot_fastboot_summary">Reboot to fastbootd by long-pressing the advanced reboot button</string>
+
+    <!-- QS rows and columns -->
+    <string name="qs_columns_rows_category_title">QS columns and rows</string>
+    <string name="qs_rows_columns_title">QS rows and columns</string>
+    <string name="qs_rows_portrait_title">Rows (Portrait)</string>
+    <string name="qs_rows_landscape_title">Rows (Landscape)</string>
+    <string name="qs_layout_category">Layout</string>
+    <string name="qs_columns_portrait_title">Columns (Portrait)</string>
+    <string name="qs_columns_landscape_title">Columns (Landscape)</string>
+    <string name="sysui_qqs_count_title">Columns (Quickbar)</string>
+
+    <!-- Quicksettings -->
+    <string name="qs_tiles_title">Quicksettings tiles</string>
+    <string name="qs_tile_title_visibility_title">Show tiles title</string>
+    <string name="qs_tile_title_visibility_summary">Show a label under each quicksettings title</string>
+
+    <!-- QS tint -->
+    <string name="qs_bg_use_new_tint">Tint QS tiles using accent color</string>
+    <string name="qs_bg_use_new_tint_summary">Enable the accent color tint on the QS tiles</string>
+
+    <!-- QS DataUsage Toggle -->
+    <string name="qs_datausage_title">Data usage in QS Header</string>
+    <string name="qs_datausage_disabled">Disabled</string>
+    <string name="qs_datausage_daily">Daily usage</string>
+    <string name="qs_datausage_monthly">Monthly usage</string>
+
 </resources>
