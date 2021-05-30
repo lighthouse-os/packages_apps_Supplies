@@ -1,90 +1,97 @@
 /*
- *  Copyright (C) 2015 The OmniROM Project
+ * Copyright (C) 2019-2021 The Project Lighthouse
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.lighthouse.settings.fragments;
 
-import com.android.internal.logging.nano.MetricsProto;
-
 import android.app.Activity;
-import android.content.Context;
-import android.content.ContentResolver;
 import android.app.WallpaperManager;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.provider.Settings;
+
 import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
+
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.lighthouse.LighthouseUtils;
 import com.android.internal.util.lighthouse.fod.FodUtils;
-import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settingslib.search.SearchIndexable;
 
-@SearchIndexable
-public class LockScreenSettings extends SettingsPreferenceFragment implements
+import java.util.ArrayList;
+import java.util.List;
+
+public class LockscreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String FOD_ANIMATION_CATEGORY = "fod_animations";
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+
+    private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.lighthouse_settings_lockscreen);
         PreferenceScreen prefScreen = getPreferenceScreen();
+        final PackageManager mPm = getActivity().getPackageManager();
+
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
 
         mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
             prefScreen.removePreference(mFODIconPickerCategory);
         }
 
-        final PreferenceCategory fodCat = (PreferenceCategory) prefScreen.findPreference(FOD_ANIMATION_CATEGORY);
+        final PreferenceCategory fodCat = (PreferenceCategory) prefScreen
+                .findPreference(FOD_ANIMATION_CATEGORY);
         final boolean isFodAnimationResources = LighthouseUtils.isPackageInstalled(getContext(),
                       getResources().getString(com.android.internal.R.string.config_fodAnimationPackage));
         if (!isFodAnimationResources) {
             prefScreen.removePreference(fodCat);
         }
-
-        ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        Resources resources = getResources();
-
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        
         return false;
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.SUPPLIES;
+        return MetricsEvent.SUPPLIES;
     }
 
-    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.lighthouse_settings_lockscreen);
 }

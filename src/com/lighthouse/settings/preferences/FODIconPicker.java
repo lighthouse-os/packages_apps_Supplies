@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.evolution.settings.preference;
+package com.lighthouse.settings.preferences;
 
 import android.content.Context;
 import android.content.res.ColorStateList;

@@ -56,7 +56,7 @@
         <Preference
             android:key="lockscreen_category"
             android:title="@string/lockscreen_title"
-            android:fragment="com.lighthouse.settings.fragments.LockScreenSettings"
+            android:fragment="com.lighthouse.settings.fragments.LockscreenSettings"
             android:icon="@drawable/ic_settings_lockscreens"/>
 
         <!-- Power Menu -->
