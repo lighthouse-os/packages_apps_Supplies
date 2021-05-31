@@ -46,11 +46,11 @@
             android:icon="@drawable/ic_settings_navbar"/> -->
 
         <!-- Gestures -->
-        <!-- <Preference
+        <Preference
             android:key="gestures_category"
             android:title="@string/gestures_title"
             android:fragment="com.lighthouse.settings.fragments.GestureSettings"
-            android:icon="@drawable/ic_settings_gesture"/> -->
+            android:icon="@drawable/ic_settings_gesture"/>
 
         <!-- Lock Screen -->
         <Preference
