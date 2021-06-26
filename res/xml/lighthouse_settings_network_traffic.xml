@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-     Copyright (C) 2019-2020 Project Lighthouse
-     Licensed under the Apache License, Version 2.0 (the "License");
+<!-- Copyright (C) 2019-2021 The Lighthoise Project
+     Licesnsed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
           http://www.apache.org/licenses/LICENSE-2.0
@@ -15,7 +14,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/network_traffic_title">
+    android:title="@string/network_traffic_settings_title">
 
     <ListPreference
         android:key="network_traffic_location"
@@ -33,11 +32,17 @@
         android:defaultValue="0"
         android:persistent="false" />
 
-    <com.ligthouse.settings.preferences.CustomSystemSeekBarPreference
+    <com.lighthouse.settings.preferences.CustomSeekBarPreference
         android:key="network_traffic_autohide_threshold"
         android:title="@string/network_traffic_autohide_threshold_title"
         android:max="10"
-        settings:min="0"
+        android:min="0"
         settings:units="" />
+
+    <com.lighthouse.settings.preferences.SystemSettingSwitchPreference
+        android:key="network_traffic_arrow"
+        android:title="@string/network_traffic_arrow"
+        android:summary="@string/network_traffic_arrow_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>

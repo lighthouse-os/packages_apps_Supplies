@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2020 Project Lighthouse
+ * Copyright (C) 2019-2021 Project Lighthouse
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
@@ -42,10 +41,8 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settingslib.search.SearchIndexable;
 
-import com.lighthouse.settings.preferences.CustomSystemSeekBarPreference;
+import com.lighthouse.settings.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -53,14 +50,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class NetworkTrafficSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
     private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
 
-    private CustomSystemSeekBarPreference mThreshold;
+    private CustomSeekBarPreference mThreshold;
     private ListPreference mNetTrafficLocation;
     private ListPreference mNetTrafficType;
 
