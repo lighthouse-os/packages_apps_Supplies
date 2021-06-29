@@ -39,7 +39,7 @@ import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.evolution.settings.preference.SystemSettingSwitchPreference;
+import com.lighthouse.settings.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +66,7 @@ public class SmartPixels extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.evolution_settings_smart_pixels);
+        addPreferencesFromResource(R.xml.lighthouse_settings_smart_pixels);
 
         findPreference(FOOTER).setTitle(R.string.smart_pixels_warning_text);
 

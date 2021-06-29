@@ -60,4 +60,10 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
+    <SwitchPreference
+        android:key="fingerprint_success_vib"
+        android:title="@string/fprint_success_vib_title"
+        android:summary="@string/fprint_success_vib_summary"
+        android:persistent="false" />
+
 </PreferenceScreen>
