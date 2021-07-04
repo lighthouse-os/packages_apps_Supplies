@@ -329,4 +329,14 @@
     <string name="qs_tint_accent">Accent Color</string>
     <string name="qs_tint_twelve">Android 12</string>
 
+    <!-- FOD -->
+    <string name="fod_icon_picker_category_title">FOD settings</string>
+    <string name="fod_icon_animation_summary">Animate the FOD icon when turning on the screen</string>
+    <string name="fod_icon_animation_effect_title">Select FOD icon animation effect</string>
+    <string name="fod_icon_animation">Animated FOD icon</string>
+    <string name="fod_icon_animation_miui_aod">Xiaomi MIUI</string>
+    <string name="fod_icon_animation_zaid_oneui">Samsung OneUI 3</string>
+    <string name="fod_icon_animation_oneui2">Samsung OneUI 2</string>
+    <string name="fod_icon_animation_oos">OnePlus OxygenOS 11</string>
+
 </resources>
