@@ -65,6 +65,12 @@
         android:title="@string/fprint_success_vib_title"
         android:summary="@string/fprint_success_vib_summary"
         android:persistent="false" />
+    <SwitchPreference
+        android:key="fingerprint_error_vib"
+        android:title="@string/fprint_error_vib_title"
+        android:summary="@string/fprint_error_vib_summary"
+        android:persistent="false" />
+    
 
     <!-- FOD customization options -->
     <PreferenceCategory
