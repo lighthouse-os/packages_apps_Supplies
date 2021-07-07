@@ -49,7 +49,9 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FINGERPRINT_ERROR_VIB = "fingerprint_error_vib";
     private static final String FOD_CUSTOMISATION_CATEGORY = "fod_customizer";
+    private static final String POCKET_JUDGE = "pocket_judge";
 
+    private Preference mPocketJudge;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
     private SwitchPreference mFingerprintErrorVib;
@@ -61,8 +63,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.lighthouse_settings_lockscreen);
 
         ContentResolver resolver = getActivity().getContentResolver();
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        Resources resources = getResources();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -85,6 +87,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mFODIconPickerCategory);
         }
 
+        mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
+        boolean mPocketJudgeSupported = res.getBoolean(
+                com.android.internal.R.bool.config_pocketModeSupported);
+        if (!mPocketJudgeSupported)
+            prefScreen.removePreference(mPocketJudge);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

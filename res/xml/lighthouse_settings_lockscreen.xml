@@ -60,6 +60,14 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
+    <com.lighthouse.settings.preferences.SystemSettingListPreference
+        android:key="ambient_music_ticker"
+        android:title="@string/ambient_music_location"
+        android:summary="%s"
+        android:entries="@array/ambient_music_location_entries"
+        android:entryValues="@array/ambient_music_location_values"
+        android:defaultValue="1" />
+
     <SwitchPreference
         android:key="fingerprint_success_vib"
         android:title="@string/fprint_success_vib_title"

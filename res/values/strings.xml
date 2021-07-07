@@ -313,7 +313,7 @@
 
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Pocket detection</string>
-    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+    <string name="pocket_judge_summary">Block screen inputs when device is in pocket</string>
 
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Smart Pixels</string>
@@ -348,5 +348,11 @@
     <!-- Heads up options -->
     <string name="less_boring_heads_up_title">Less boring heads up</string>
     <string name="less_boring_heads_up_summary">Quickly disable heads up for all apps but keep them enabled for dialer and messaging apps</string>
-    
+
+    <!-- Ambient music ticker location -->
+    <string name="ambient_music_location">Show ambient music ticker</string>
+    <string name="ambient_music_disabled">Disabled</string>
+    <string name="ambient_music_bottom">At the bottom (default)</string>
+    <string name="ambient_music_center">Centered (under the clock)</string>
+
 </resources>
