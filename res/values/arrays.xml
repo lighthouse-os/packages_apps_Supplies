@@ -247,7 +247,7 @@
     <string-array name="qs_tint_values" translatable="false">
         <item>0</item>
         <item>1</item>
-        <item>3</item>
+        <item>2</item>
     </string-array>
 
     <!-- FOD icon animations -->
