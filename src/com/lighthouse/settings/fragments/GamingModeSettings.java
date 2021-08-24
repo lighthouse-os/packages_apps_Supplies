@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lighthouse.fragments;
+package com.lighthouse.settings.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -30,7 +30,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.ArrayList;
 
-import com.lighthouse.preferences.PackageListPreference;
+import com.lighthouse.settings.preferences.PackageListPreference;
 
 public class GamingModeSettings extends SettingsPreferenceFragment {
 

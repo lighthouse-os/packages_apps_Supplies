@@ -43,17 +43,17 @@
         android:key="gaming_mode_notification_danmaku"
         android:title="@string/gaming_mode_notification_danmaku_title" 
         android:summary="@string/gaming_mode_notification_danmaku_summary"
-        android:fragment="com.lighthouse.fragments.DanmakuSettings"
+        android:fragment="com.lighthouse.settings.fragments.DanmakuSettings"
         android:dependency="gaming_mode_enabled" />
 
     <Preference
         android:key="gaming_mode_quick_start_apps"
         android:title="@string/gaming_mode_quick_start_apps_title" 
         android:summary="@string/gaming_mode_quick_start_apps_summary"
-        android:fragment="com.lighthouse.fragments.QuickStartAppSettings"
+        android:fragment="com.lighthouse.settings.fragments.QuickStartAppSettings"
         android:dependency="gaming_mode_enabled" />
 
-    <com.lighthouse.settings.preference.SystemSettingSeekBarPreference
+    <com.lighthouse.settings.preferences.SystemSettingSeekBarPreference
         android:key="gaming_mode_menu_opacity"
         android:title="@string/gaming_mode_menu_opacity_title"
         android:max="100"

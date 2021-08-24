@@ -46,5 +46,5 @@
         android:key="gaming_category"
         android:title="@string/gaming_title"
         android:summary="@string/gaming_title_summary"
-        android:fragment="com.lighthouse.fragments.GamingModeSettings" />
+        android:fragment="com.lighthouse.settings.fragments.GamingModeSettings" />
 </PreferenceScreen>
