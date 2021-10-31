@@ -34,18 +34,10 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class Supplies extends SettingsPreferenceFragment {
 
-    private static final String KEY_AMBIENT_DISPLAY_CUSTOM = "ambient_display_custom";
-    private Preference mCustomDoze;
-
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.lighthouse_settings);
-
-        mCustomDoze = (Preference) findPreference(KEY_AMBIENT_DISPLAY_CUSTOM);
-        if (!Utils.isCustomDoze(getActivity().getApplicationContext())) {
-            getPreferenceScreen().removePreference(mCustomDoze);
-        }
         
     }
 

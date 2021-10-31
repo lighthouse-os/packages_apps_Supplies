@@ -19,8 +19,6 @@ import com.android.settingslib.search.SearchIndexable;
 @SearchIndexable
 public class NotificationSettings extends SettingsPreferenceFragment {
 
-    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
-
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -29,10 +27,6 @@ public class NotificationSettings extends SettingsPreferenceFragment {
 
         PreferenceScreen prefScreen = getPreferenceScreen();
 
-        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
-        if (!Utils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(incallVibCategory);
-        }
     }
 
     @Override

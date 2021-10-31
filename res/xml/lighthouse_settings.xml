@@ -18,18 +18,18 @@
     android:title="@string/lighthouse_settings_title" >
 
         <!-- Status Bar -->
-        <Preference
+        <!-- <Preference
             android:key="statusbar_category"
             android:title="@string/statusbar_title"
             android:fragment="com.lighthouse.settings.fragments.StatusBarSettings" 
-            android:icon="@drawable/ic_settings_statusbar"/>
+            android:icon="@drawable/ic_settings_statusbar"/> -->
 
         <!-- Quick Settings panel -->
-        <Preference
+        <!-- <Preference
             android:key="quicksettings_category"
             android:title="@string/quicksettings_title"
             android:fragment="com.lighthouse.settings.fragments.QuickSettings"
-            android:icon="@drawable/ic_settings_quicksettings"/>
+            android:icon="@drawable/ic_settings_quicksettings"/> -->
 
         <!-- Buttons -->
         <!-- <Preference
@@ -46,18 +46,18 @@
             android:icon="@drawable/ic_settings_navbar"/> -->
 
         <!-- Gestures -->
-        <Preference
+        <!-- <Preference
             android:key="gestures_category"
             android:title="@string/gestures_title"
             android:fragment="com.lighthouse.settings.fragments.GestureSettings"
-            android:icon="@drawable/ic_settings_gesture"/>
+            android:icon="@drawable/ic_settings_gesture"/> -->
 
         <!-- Lock Screen -->
-        <Preference
+        <!-- <Preference
             android:key="lockscreen_category"
             android:title="@string/lockscreen_title"
             android:fragment="com.lighthouse.settings.fragments.LockScreenSettings"
-            android:icon="@drawable/ic_settings_lockscreens"/>
+            android:icon="@drawable/ic_settings_lockscreens"/> -->
 
         <!-- Power Menu -->
         <!-- <Preference
@@ -74,18 +74,18 @@
             android:icon="@drawable/ic_settings_recents"/-->
 
         <!-- Notifications -->
-        <Preference
+        <!-- <Preference
             android:key="notifications_category"
             android:title="@string/notifications_title"
             android:fragment="com.lighthouse.settings.fragments.NotificationSettings"
-            android:icon="@drawable/ic_settings_notification"/>
+            android:icon="@drawable/ic_settings_notification"/> -->
 
         <!-- Misc -->
-        <Preference
+        <!-- <Preference
             android:key="misc_category"
             android:title="@string/misc_title"
             android:fragment="com.lighthouse.settings.fragments.MiscSettings"
-            android:icon="@drawable/ic_settings_miscs"/>
+            android:icon="@drawable/ic_settings_miscs"/> -->
 
         <!-- Device Part -->
         <!-- <Preference
@@ -97,7 +97,7 @@
         </Preference> -->
 
     <!-- Ambient Display -->
-    <Preference
+    <!-- <Preference
         android:key="ambient_display_custom"
         android:persistent="false"
         android:title="@string/ambient_display_custom_title"
@@ -106,6 +106,6 @@
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.custom.ambient.display"
             android:targetClass="com.custom.ambient.display.DozeSettings" />
-    </Preference>
+    </Preference> -->
 
 </PreferenceScreen>

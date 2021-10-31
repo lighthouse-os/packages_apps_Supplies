@@ -19,32 +19,4 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 
-    <com.lighthouse.settings.preferences.SystemSettingSwitchPreference
-        android:key="torch_long_press_power_gesture"
-        android:title="@string/torch_long_press_power_gesture_title"
-        android:summary="@string/torch_long_press_power_gesture_desc"
-        android:defaultValue="false" />
-
-    <ListPreference
-        android:key="torch_long_press_power_timeout"
-        android:dialogTitle="@string/torch_long_press_power_timeout_title"
-        android:title="@string/torch_long_press_power_timeout_title"
-        android:summary="%s"
-        android:entries="@array/torch_long_press_power_timeout_entries"
-        android:entryValues="@array/torch_long_press_power_timeout_values"
-        android:dependency="torch_long_press_power_gesture"
-        android:persistent="false" />
-
-    <PreferenceCategory
-         android:key="dtts_category"
-         android:title="@string/dtts_category_title">
-
-        <com.lighthouse.settings.preferences.SystemSettingSwitchPreference
-            android:key="double_tap_sleep_gesture"
-            android:title="@string/double_tap_to_sleep_title"
-            android:summary="@string/double_tap_to_sleep_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
