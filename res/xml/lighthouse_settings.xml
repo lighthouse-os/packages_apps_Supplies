@@ -81,11 +81,11 @@
         android:fragment="com.lighthouse.settings.fragments.AnimationSettings"
         android:icon="@drawable/ic_settings_animations" /> -->
 
-    <!-- Misc -->
+    <!-- Misc 
     <Preference
         android:key="misc_category"
         android:title="@string/misc_title"
         android:fragment="com.lighthouse.settings.fragments.MiscellaneousSettings"
-        android:icon="@drawable/ic_settings_miscellaneous" />
+        android:icon="@drawable/ic_settings_miscellaneous" /> -->
 
 </PreferenceScreen>
