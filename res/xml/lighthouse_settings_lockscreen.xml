@@ -112,10 +112,10 @@
         android:title="@string/general_category">
 
     <com.lighthouse.settings.preference.SystemSettingSwitchPreference
-        android:key="disable_ripple_effect"
+        android:key="enable_ripple_effect"
         android:title="@string/enable_fingerprint_ripple_effect_title"
         android:summary="@string/enable_fingerprint_ripple_effect_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
         
         <com.lighthouse.settings.preference.SystemSettingSwitchPreference
