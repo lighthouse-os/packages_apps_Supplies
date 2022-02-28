@@ -18,9 +18,9 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title">
 
-    <PreferenceCategory
+<!--     <PreferenceCategory
         android:key="quick_settings_general_category"
-        android:title="@string/general_category">
+        android:title="@string/general_category"> -->
  
         <!-- <com.lighthouse.settings.preference.SecureSettingSwitchPreference
             android:key="disable_secure_tiles_on_lockscreen"
@@ -28,13 +28,13 @@
             android:summary="@string/qstile_requires_unlocking_summary"
             android:defaultValue="true" />  -->
 
-        <com.lighthouse.settings.preference.SystemSettingSwitchPreference
+        <!-- <com.lighthouse.settings.preference.SystemSettingSwitchPreference
             android:key="qs_running_services_toggle"
             android:title="@string/qs_running_services_title"
             android:summary="@string/qs_running_services_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false" /> -->
 
-    </PreferenceCategory>
+  <!--  </PreferenceCategory> -->
 
     <PreferenceCategory
         android:key="quick_settings_brighness_category"
