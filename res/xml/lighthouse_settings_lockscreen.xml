@@ -54,13 +54,29 @@
         android:summary="@string/double_tap_to_sleep_lockscreen_summary"
         android:defaultValue="true" />
 
-    <com.lighthouse.settings.preference.SecureSettingSwitchPreference
+        <com.lighthouse.settings.preference.SecureSettingSwitchPreference
         android:key="doze_pulse_on_double_tap"
         android:title="@string/double_tap_on_doze_to_wake_title"
         android:summary="@string/double_tap_on_doze_to_wake_summary"
         android:defaultValue="true" />
 
-
+        <com.lighthouse.settings.preference.SystemSettingSwitchPreference
+        android:key="enable_ripple_effect"
+        android:title="@string/enable_fingerprint_ripple_effect_title"
+        android:summary="@string/enable_fingerprint_ripple_effect_summary"
+        android:defaultValue="true" />
+        
+        <com.lighthouse.settings.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="true" />
+        
+        <com.lighthouse.settings.preference.SystemSettingSwitchPreference
+        android:key="lockscreen_power_menu_disabled"
+        android:title="@string/lockscreen_power_menu_disabled_title"
+        android:summary="@string/lockscreen_power_menu_disabled_summary"
+        android:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -106,30 +122,5 @@
         android:defaultValue="true" />
 
     </PreferenceCategory> -->
-
-    <PreferenceCategory
-        android:key="lockscreen_ui_general_category"
-        android:title="@string/general_category">
-
-    <com.lighthouse.settings.preference.SystemSettingSwitchPreference
-        android:key="enable_ripple_effect"
-        android:title="@string/enable_fingerprint_ripple_effect_title"
-        android:summary="@string/enable_fingerprint_ripple_effect_summary"
-        android:defaultValue="true" />
-
-        
-        <com.lighthouse.settings.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_battery_info"
-        android:title="@string/lockscreen_battery_info_title"
-        android:summary="@string/lockscreen_battery_info_summary"
-        android:defaultValue="true" />
-        
-        <com.lighthouse.settings.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_power_menu_disabled"
-        android:title="@string/lockscreen_power_menu_disabled_title"
-        android:summary="@string/lockscreen_power_menu_disabled_summary"
-        android:defaultValue="true" />
-        
-    </PreferenceCategory>
 
 </PreferenceScreen>
