@@ -36,10 +36,10 @@
         android:summary="@string/double_tap_to_sleep_summary"
         android:defaultValue="true" />
 
-    <Preference
+    <!-- <Preference
         android:key="status_bar_clock"
         android:fragment="com.lighthouse.settings.fragments.ClockDateSettings"
-        android:title="@string/status_bar_clock_title" /> 
+        android:title="@string/status_bar_clock_title" />  -->
 
     <Preference
         android:key="traffic"
@@ -60,34 +60,28 @@
             android:defaultValue="false"/>
 
         <com.lighthouse.settings.preference.SystemSettingSwitchPreference
-             android:key="volte_icon"
-             android:title="@string/volte_icon_title"
-             android:summary="@string/volte_icon_summary"
-             android:defaultValue="true"/>
+            android:key="use_old_mobiletype"
+            android:title="@string/use_old_mobiletype_title"
+            android:summary="@string/use_old_mobiletype_summary"
+            android:defaultValue="true" />
 
-    </PreferenceCategory>
+       <com.lighthouse.settings.preference.SystemSettingSwitchPreference
+            android:key="show_volte_icon"
+            android:title="@string/show_volte_title"
+            android:summary="@string/show_volte_summary"
+            android:defaultValue="true" />
 
-    <PreferenceCategory
-        android:key="misc_icons_category"
-        android:title="@string/icons_category">
+       <com.lighthouse.settings.preference.SystemSettingSwitchPreference
+            android:key="show_vowifi_icon"
+            android:title="@string/vowifi_icon_title"
+            android:summary="@string/vowifi_icon_summary"
+            android:defaultValue="true" />
 
        <com.lighthouse.settings.preference.SecureSettingSwitchPreference
             android:key="show_combined_status_bar_signal_icons"
             android:title="@string/combined_status_bar_signal_icons"
             android:summary="@string/combined_status_bar_signal_icons_summary"
             android:defaultValue="false" />
-
-        <!-- <com.lighthouse.settings.preference.SecureSettingSwitchPreference
-            android:key="enable_camera_privacy_indicator"
-            android:title="@string/mic_camera_privacy_indicator_title"
-            android:summary="@string/mic_camera_privacy_indicator_summary"
-            android:defaultValue="true" />
-
-        <com.lighthouse.settings.preference.SecureSettingSwitchPreference
-            android:key="enable_location_privacy_indicator"
-            android:title="@string/location_privacy_indicator_title"
-            android:summary="@string/location_privacy_indicator_summary"
-            android:defaultValue="false" /> -->
 
     </PreferenceCategory>
 

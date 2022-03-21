@@ -214,9 +214,9 @@
     <string name="show_fourg_icon_title">Show 4G instead of LTE</string>
     <string name="show_fourg_icon_summary">Replace LTE indicator with 4G</string>
 
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE icon</string>
-    <string name="volte_icon_summary">Display VoLTE icon when available</string>
+    <!-- Show VoLTE switch -->
+    <string name="show_volte_title">VoLTE icon</string>
+    <string name="show_volte_summary">Display VoLTE icon</string>
 
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">VoWiFi icon</string>
@@ -664,8 +664,10 @@
 
     <!-- Lock screen media artwork -->
     <string name="lockscreen_media_blur_title">Media art blur level</string>
-    <string name="show_lockscreen_media_art_title">Show media art</string>
     <string name="lockscreen_media_art_options_title">Lock screen media art</string>
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Display media cover art when available</string>
+
 
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Sensor block per-package</string>
@@ -1100,18 +1102,6 @@
     <!-- Charging animation -->
     <string name="charging_animation_title">Charging animation</string>
     <string name="charging_animation_summary">Display an animation when the device is plugged in</string>
-
-    <!-- Monet Engine -->
-    <string name="monet_category">Monet</string>
-    <string name="monet_engine_title">Monet engine</string>
-    <string name="monet_engine_summary">Customize monet parameters</string>
-    <string name="monet_engine_custom_color_title">Use custom color</string>
-    <string name="monet_engine_custom_color_summary">Use custom color for monet engine instead of wallpaper colors</string>
-    <string name="monet_engine_color_override_title">Custom color</string>
-    <string name="monet_engine_white_luminance_user_title">White luminance</string>
-    <string name="monet_engine_accurate_shades_title">Use accurate shades</string>
-    <string name="monet_engine_chroma_factor_title">Chroma factor</string>
-    <string name="monet_engine_linear_lightness_title">Use linear lightness</string>
 
     <!-- Black theme -->
     <string name="system_black_theme_title">Use black theme</string>

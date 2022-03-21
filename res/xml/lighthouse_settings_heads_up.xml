@@ -27,17 +27,4 @@
         android:summary="@string/less_boring_heads_up_summary"
         android:defaultValue="false" />
 
-    <PreferenceCategory
-        android:title="@string/heads_up_blacklist_title"
-        android:key="blacklist_applications"
-        android:dependency="heads_up_notifications_enabled">
-
-        <com.lighthouse.settings.preference.AppListPreference
-            android:key="add_blacklist_packages"
-            android:icon="@drawable/ic_menu_add_activated_tint"
-            android:title="@string/add_heads_up_package"
-            android:summary="@string/add_heads_up_blacklist_summary" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
