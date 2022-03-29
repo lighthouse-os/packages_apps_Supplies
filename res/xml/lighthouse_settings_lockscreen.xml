@@ -35,6 +35,12 @@
         android:key="lockscreen_general_category"
         android:title="@string/general_category">
 
+    <com.lighthouse.settings.preference.SystemSettingSwitchPreference
+        android:key="enable_ripple_effect"
+        android:title="@string/enable_fingerprint_ripple_effect_title"
+        android:summary="@string/enable_fingerprint_ripple_effect_summary"
+        android:defaultValue="true" />
+        
         <com.lighthouse.settings.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_lockscreen"
         android:title="@string/double_tap_to_sleep_lockscreen_title"
