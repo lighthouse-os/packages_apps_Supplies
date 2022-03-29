@@ -28,15 +28,4 @@
 
     </PreferenceCategory>
 
-   <PreferenceCategory
-        android:key="volume_category"
-        android:title="@string/volume_category">
-
-    <com.lighthouse.settings.preference.SystemSettingSwitchPreference
-	android:key="volume_button_music_control"
-        android:title="@string/volume_skiptrack_screen_title"
-        android:defaultValue="false" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
