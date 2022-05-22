@@ -25,6 +25,8 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
 
+import static android.provider.Settings.Secure.STATUS_BAR_BATTERY_STYLE;
+
 import androidx.preference.ListPreference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
@@ -55,9 +57,14 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
     private static final String KEY_USE_OLD_MOBILETYPE = "use_old_mobiletype";
     private static final String SYSTEMUI_PACKAGE = "com.android.systemui";
-    private static final String PREF_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
-    private static final String PREF_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String LEFT_BATTERY_TEXT = "do_left_battery_text";
+
+    private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 4;
+
+    private ListPreference mStatusBarBatteryShowPercent;
+    private ListPreference mStatusBarBattery;
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -85,12 +92,54 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
         final Context mContext = getActivity().getApplicationContext();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        mStatusBarBatteryShowPercent =
+                (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
+
+        int batteryShowPercent = Settings.System.getInt(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT, 0);
+        mStatusBarBatteryShowPercent.setValue(String.valueOf(batteryShowPercent));
+        mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
+        mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
+
+        mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+         int batteryStyle = Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_BATTERY_STYLE, 0);
+        mStatusBarBattery.setValue(String.valueOf(batteryStyle));
+        mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+        enableStatusBarBatteryDependents(batteryStyle);
+        mStatusBarBattery.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mStatusBarBatteryShowPercent) {
+            int batteryShowPercent = Integer.valueOf((String) newValue);
+            int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
+            Settings.System.putInt(
+                    resolver, Settings.System.SHOW_BATTERY_PERCENT, batteryShowPercent);
+            mStatusBarBatteryShowPercent.setSummary(
+                    mStatusBarBatteryShowPercent.getEntries()[index]);
+            return true;
+        } else if (preference == mStatusBarBattery) {
+            int batteryStyle = Integer.valueOf((String) newValue);
+            int index = mStatusBarBattery.findIndexOfValue((String) newValue);
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.STATUS_BAR_BATTERY_STYLE, batteryStyle);
+            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
+            enableStatusBarBatteryDependents(batteryStyle);
+            return true;
+        }
         return false;
+    }
+
+    private void enableStatusBarBatteryDependents(int batteryIconStyle) {
+        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+            mStatusBarBatteryShowPercent.setEnabled(false);
+        } else {
+            mStatusBarBatteryShowPercent.setEnabled(true);
+        }
     }
 
     @Override
